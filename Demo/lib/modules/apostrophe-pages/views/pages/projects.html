@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block title %}My Projects{% endblock %} {% block main %}
+<header>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 style="text-align: center;" class="display-4">{{ data.page.title | upper }}</h1>
+            <div class="lead">{{ apos.singleton(data.page, 'textBlock', 'apostrophe-rich-text', { toolbar: [ 'Bold', 'Italic', 'Underline', 'RemoveFormat', 'NumberedList', 'BulletedList', 'Outdent', 'Indent', 'Blockquote', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+                'Table', 'Undo', 'Redo' ], styles: [ { name: 'Paragraph', element: 'p' }, { name: 'Quote / Section Descriptor', element: 'h3' }, { name: 'Attribution / Meta', element: 'p', attributes: { 'class': 'nd-meta'} }, { name: 'Header', element:
+                'h5' } ] }) }}</div>
+        </div>
+    </div>
+</header>
+<main role="main" class="container">
+    <div class="page-section">
+        <div class="container">
+            <div>
+                {% for tab in data.page._children %}
+                <h1 style="text-align: center;padding-bottom: 40px;"><a style="color:#573457;" href="{{ tab._url }}"><strong>{{ tab.title }}</strong></a></h1>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

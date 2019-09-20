@@ -1,0 +1,15 @@
+{% extends "layout.html" %} {% block title %}ApostropheCMS Bootstrap 4 Template{% endblock %} {% block main %}
+<header>
+    <div style="overflow: hidden;max-height: 40vh;">
+        {{ apos.singleton(data.page, 'headerPics', 'apostrophe-images', { limit: 4, size: 'full' }) }}
+    </div>
+</header>
+<main role="main" class="container">
+    <div class="page-section">
+        <div class="container">
+            {{ apos.area(data.page, 'homeBody', {widgets: { 'apostrophe-rich-text': { toolbar: [ 'Bold', 'Italic', 'Underline', 'RemoveFormat', 'NumberedList', 'BulletedList', 'Outdent', 'Indent', 'Blockquote', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'Table',
+            'Undo', 'Redo' ] }, 'apostrophe-images': { size: 'full' }, 'two-column': {}, 'three-column': {}, 'section-title': {} } }) }}
+        </div>
+    </div>
+</main>
+{% endblock %}

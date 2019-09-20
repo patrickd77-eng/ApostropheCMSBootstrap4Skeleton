@@ -1,0 +1,19 @@
+{% extends "layout.html" %} {% block title %}{{ data.page.title }}{% endblock %} {% block main %}
+<header>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 style="text-align: center;" class="display-4">{{ data.page.title | upper }}</h1>
+            <div class="lead">{{ apos.singleton(data.page, 'textBlock', 'apostrophe-rich-text', { toolbar: [ 'Bold', 'Italic', 'Underline', 'RemoveFormat', 'NumberedList', 'BulletedList', 'Outdent', 'Indent', 'Blockquote', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+                'Table', 'Undo', 'Redo' ], styles: [ { name: 'Paragraph', element: 'p' }, { name: 'Quote / Section Descriptor', element: 'h3' }, { name: 'Header', element: 'h5' } ] }) }}</div>
+        </div>
+    </div>
+</header>
+<main role="main" class="container">
+    <div class="page-section">
+        <div class="container">
+            {{ apos.area(data.page, 'standardPageBody', {widgets: { 'apostrophe-rich-text': { toolbar: [ 'Bold', 'Italic', 'Underline', 'RemoveFormat', 'NumberedList', 'BulletedList', 'Outdent', 'Indent', 'Blockquote', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+            'Table', 'Undo', 'Redo' ] }, 'apostrophe-images': { size: 'full' }, 'two-column': {}, 'three-column': {}, 'section-title': {} } }) }}
+        </div>
+    </div>
+</main>
+{% endblock %}
